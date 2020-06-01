@@ -1,0 +1,21 @@
+
+--- 
+language: node_js
+node_js: 
+- 0.8
+env:
+
+before_script:
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+- npm link
+- npm install -g grunt-cli
+
+# We're only allowed two concurrent browsers on saucelabs
+# We also have to run seperate grunt processes for each sauce
+# Note: this takes several minutes
+script:
+- grunt jshint
+- grunt karma:sauce1
+- grunt karma:sauce2
+- grunt build docs
