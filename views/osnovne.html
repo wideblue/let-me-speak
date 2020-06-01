@@ -1,0 +1,21 @@
+<div class="topcoat-navigation-bar"  >
+	<div class="topcoat-navigation-bar__item left quarter">
+     
+    </div>
+    <div class="topcoat-navigation-bar__item center  half">
+      <h2 class="topcoat-navigation-bar__title">OSNOVNE</h1>
+    </div>
+    <div class="topcoat-navigation-bar__item right quarter">
+      <a class="topcoat-button--cta" ng-click="doTheBack()">Zapri</a>
+    </div>
+</div>
+<div class="pad">
+    
+			<div ng-repeat="phone in slovarJSON[0].vnos" class = "box" >
+			        <div class="boxInner boxInner-background-no-child" ng-click="playList({{[phone]}})">
+			         <img ng-src="{{pathToFiles +  picturesDirectory+ phone.slika}}" >
+			          <div class="titleBox" ng-class="phone.barva" >{{phone.vsebina}}</div>
+			        </div>
+			</div>
+		
+</div>

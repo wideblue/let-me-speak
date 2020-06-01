@@ -1,0 +1,47 @@
+/* 
+ * Font Custom: bare CSS
+ */
+
+@font-face {
+  font-family: "fontcustom";
+  src: url("fontcustom_f1041d5056a1dc03c9679507688cc120.eot");
+  src: url("fontcustom_f1041d5056a1dc03c9679507688cc120.eot?#iefix") format("embedded-opentype"),
+       url("fontcustom_f1041d5056a1dc03c9679507688cc120.woff") format("woff"),
+       url("fontcustom_f1041d5056a1dc03c9679507688cc120.ttf") format("truetype"),
+       url("fontcustom_f1041d5056a1dc03c9679507688cc120.svg#fontcustom") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.icon-brisi:before,
+.icon-domov:before,
+.icon-izkljuci_zvok:before,
+.icon-nazaj:before,
+.icon-osnovne:before,
+.icon-plus:before,
+.icon-predvajaj:before,
+.icon-prenos:before,
+.icon-priljubljene:before,
+.icon-tipkovnica:before,
+.icon-vkljuci_zvok:before {
+  font-family: "fontcustom";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  text-decoration: inherit;
+}
+
+.icon-brisi:before { content: "\f100"; }
+.icon-domov:before { content: "\f101"; }
+.icon-izkljuci_zvok:before { content: "\f102"; }
+.icon-nazaj:before { content: "\f103"; }
+.icon-osnovne:before { content: "\f104"; }
+.icon-plus:before { content: "\f105"; }
+.icon-predvajaj:before { content: "\f106"; }
+.icon-prenos:before { content: "\f107"; }
+.icon-priljubljene:before { content: "\f108"; }
+.icon-tipkovnica:before { content: "\f109"; }
+.icon-vkljuci_zvok:before { content: "\f10a"; }

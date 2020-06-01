@@ -1,0 +1,29 @@
+<div class="topcoat-navigation-bar"  >
+  <div class="topcoat-navigation-bar__item left quarter">
+     <a class="topcoat-button" ng-hide="edit" ng-click="changeEdit()">Uredi</a>
+     <a class="topcoat-button" ng-show="edit" ng-click="changeEdit()">Zavrni</a>
+    </div>
+    <div class="topcoat-navigation-bar__item center  half">
+      <h2 class="topcoat-navigation-bar__title">PRILJUBLJENE</h1>
+    </div>
+    <div class="topcoat-navigation-bar__item right quarter">
+      <a class="topcoat-button--cta" ng-click="doTheBack()">Zapri</a>
+    </div>
+</div>
+
+<div class="pad">
+    <div class="topcoat-list__container">
+    	<ul id="favorites-list" class= "topcoat-list">
+            <li ng-click="playList(favorit)" ng-repeat="favorit in favoritesList" class="topcoat-list__item">
+           
+              <img ng-src="{{pathToFiles + picturesDirectory+item.slika}}" ng-repeat="item in favorit" class="item-selection_favorites " >
+        
+             
+              <button class="topcoat-icon-button icon-button-list" ng-show="edit" ng-click="removeFavorit(favorit)"><i class="icon-brisi"></i></button>
+      
+
+            </li>
+        </ul>
+    </div>
+</div>    	
+

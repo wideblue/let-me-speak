@@ -1,0 +1,199 @@
+<div class="topcoat-navigation-bar"  id="slovar-navbar">
+
+    <div class="topcoat-navigation-bar__item left half ">
+      <div   class="slovar-navbar_item_top" >
+        <img ng-src="{{pathToFiles + picturesDirectory+ item.slika}}" ng-repeat="item in itemsList track by $index" class="item-selection" >
+      </div>
+    </div>
+    <div class="topcoat-navigation-bar__item  right half">
+      <div class="slovar-navbar_item_top">
+        <a ng-click = "playList(itemsList)" class="topcoat-icon-button--quiet">
+          <i class="topcoat-icon icon-predvajaj icon-large "  ></i>
+          
+        </a>
+        <a ng-click = "deliteList()" class="topcoat-icon-button--quiet">
+          <i class="topcoat-icon icon-brisi icon-large "  ></i>
+        </a>
+        <a ng-click = "addToFavorites(itemsList)" class="topcoat-icon-button--quiet">
+          <i class="topcoat-icon icon-plus icon-large "  ></i>
+         
+       </a>
+      </div>
+    </div>
+</div>
+<div class="topcoat-navigation-bar slovar-navbar_bottom " >
+  <div   class="slovar-navbar_waper_bottom" >
+    <div class=" topcoat-navigation-bar__item slovar-navbar_item_bottom left quarter">
+          <a ng-click = "doTheBack()" class="topcoat-icon-button--quiet" ng-hide="hideBackBtn">
+            <i class=" topcoat-icon icon-nazaj icon-large "  ></i> 
+          </a>
+    </div>
+    
+    <div class="topcoat-navigation-bar__item center slovar-navbar_item_bottom half">
+      <h1 class="topcoat-navigation-bar__title">{{vsebina}}</h1>
+    </div>
+    <div class=" topcoat-navigation-bar__item  slovar-navbar_item_bottom right quarter">
+          <a ng-click="goToLocation('slovar/stran', 'none')" class="topcoat-icon-button--quiet" ng-hide="hideBackBtn">
+            <i class=" topcoat-icon icon-domov icon-large "  ></i>
+          </a>
+    </div>
+  </div>
+</div>
+
+  
+  <!-- <div class="">
+  <header class="bar-title">
+  
+    <div   class="" >
+    <img ng-src="{{item.slika}}" ng-repeat="item in itemsList" class="item-selection" >
+    </div>
+    <ul class="segmented-controller">
+      
+      <li ng-click = "doTheBack()">
+        <i class="  icon-chevron-left icon-large " style="color:white" ></i> 
+       
+      </li>
+      <li ng-click = "playList(itemsList)">
+        <i class="icon-play icon-large " style="color:white" ></i>
+        
+      </li>
+      <li ng-click = "deliteList()">
+        <i class="icon-remove icon-large " style="color:white" ></i>
+        
+      </li>
+      <li ng-click = "addToFavorites(itemsList)">
+        <i class="icon-plus icon-large " style="color:white" ></i>
+       
+     </li>
+      <li>
+        <!-- <i class=" icon-home icon-large " style="color:white" ></i>
+        <a href="#/" class="">Domov</a>
+      </li>
+      
+    </ul>
+  
+  </header> -->
+  <!-- bottom toolbar
+ <div class="navbar navbar-fixed-bottom">
+  <div class="navbar-inner toolbar-btn-group btn-group">-->
+  <nav class="bar-tab" ng-show="tabBarShow">
+    <ul class="tab-inner">
+      <li ng-click="goToLocation('priljubljene', 'modal')" class="tab-item topcoat-icon-button--quiet ">
+         <i class=" topcoat-icon icon-priljubljene icon-large " ></i>
+        <a  class="">
+          <div class="tab-label">Priljubljene</div>
+       
+        </a>
+    </li>
+    <li ng-click="goToLocation('tipkovnica', 'modal')" class="tab-item topcoat-icon-button--quiet">
+      <i class="topcoat-icon icon-tipkovnica icon-large "  ></i>
+      <a>
+       
+        <div class="tab-label">Tipkovnica</div>
+      
+    </a>
+    </li>
+    <li ng-click="goToLocation('osnovne', 'modal')" class="tab-item topcoat-icon-button--quiet">
+       <i class="topcoat-icon icon-osnovne icon-large " ></i>
+      <a  class="">
+        <div class="tab-label">Osnovne</div>
+      </a>
+      
+    </li>  
+    <li ng-click="toggleSound()" class="tab-item topcoat-icon-button--quiet" ng-show="doSound">
+       <i class="topcoat-icon icon-vkljuci_zvok icon-large "  ></i>
+      <a  class="">
+        <div class="tab-label">&nbsp;&nbsp;&nbsp;Zvok&nbsp;&nbsp;&nbsp;</div>
+      </a>
+      
+    </li> 
+
+    <li ng-click="toggleSound()"  class="tab-item topcoat-icon-button--quiet" ng-hide="doSound">
+       <i class="topcoat-icon icon-izkljuci_zvok icon-large "  ></i>
+      <a  class="">
+        <div class="tab-label">Ni zvoka</div>
+      </a>
+      
+    </li>  
+    </ul>
+  </nav>
+  <!-- </div>
+</div> -->
+  <!-- <div class=" centralize pad"> -->
+    <!-- <div class="scroll"> -->
+      <div class="wrap">
+          <!--Body content-->
+          <!-- <div class="row-fluid">
+           <img ng-src="{{mainImageUrl}}" >
+           
+           </div> -->
+          <ul ng-repeat="phone in phones track by $index" class = "box " >
+              <li class="boxInner " ng-class =" (phone.hasChildren) ? 'boxInner-background-children' : 'boxInner-background-no-child'" ng-click="iconClick(phone)">
+                  <img ng-src="{{pathToFiles + picturesDirectory+phone.slika}}" >
+                      <div class="titleBox" ng-class="phone.barva">{{phone.vsebina}}  </div>
+              </li>
+          </ul>
+          
+      <!-- </div> -->
+      <!-- <div class="">
+          <p>{{favoritesList | json}}</p>
+      </div> -->
+    </div>
+  <!-- </div>  -->
+
+
+ <!--Modals
+<div modal="modalPriljubljene" close="modalClose('modalPriljubljene')" options="opts">
+        <div id="myModal" class="modal">
+        <header class="bar-title">
+          <h1 class="title">Priljubljene</h1>
+          <a class="button" ng-click="modalClose('modalPriljubljene')">
+            Zapri
+          </a>
+        </header>
+       
+            
+        <div class="content content-padded">
+          <ul id="favorites-list">
+            <li ng-repeat="favorit in favoritesList" class="row-fluid">
+              <img ng-src="{{item.slika}}" ng-repeat="item in favorit" class="item-selection" >
+              <button class="btn" ng-click="playList(favorit)"><i class="icon-play"></i></button>
+              <button class="btn" ng-click="removeFavorit(favorit)"><i class="icon-remove"></i></button>
+
+            </li>
+        </ul>
+        </div>
+        
+ </div>
+ </div>
+
+<div modal="modalTipkovnica" close="modalClose('modalTipkovnica')" options="opts">       
+         <header class="bar-title">
+          <h1 class="title">Tipkovnica</h1>
+          <a class="button" ng-click="modalClose('modalTipkovnica')">
+            Zapri
+          </a>
+        </header>
+        <div class="content content-padded">
+          <textarea autofocus class="boxsizingBorder"></textarea>
+        </div>
+        
+ </div>
+
+ <div modal="modalOsnovne" close="modalClose('modalOsnovne')" options="opts">
+    <div id="myModal" class="modal">
+      <header class="bar-title">
+        <h1 class="title">Modal</h1>
+        <a class="button" ng-click="modalClose('modalOsnovne')">
+          Zapri
+        </a>
+      </header>
+      
+      <div class="content content-padded">
+        <p>The contents of my modal.</p>
+      </div>
+    </div>
+        
+ </div>
+-->
+ 

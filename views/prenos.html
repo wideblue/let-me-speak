@@ -1,0 +1,58 @@
+<div class="topcoat-navigation-bar"  ng-show="showNavbar" >
+	<div class="topcoat-navigation-bar__item left quarter">
+     
+    </div>
+    <div class="topcoat-navigation-bar__item center half">
+      <h2 class="topcoat-navigation-bar__title">PRENOS</h1>
+    </div>
+    <div class="topcoat-navigation-bar__item right quarter">
+      <a class="topcoat-button--cta" ng-hide="firstDownload" ng-class="(downloadPhase != 'loginForm')? 'is-disabled' : ''" ng-click="doTheBack()">Zapri</a>
+    </div>
+</div>
+<div class="pad" ng-switch="downloadPhase">
+   <div  ng-switch-when="loginForm">
+    <div id="downloadNotification" ng-show="showNotification" class=" fullWidth">{{notification}}</div>
+   	<form id="loginForm" name="loginForm"  novalidate class="">
+      
+        <label class="topcoat-checkbox__label" ng-class =" firstDownload ? 'is-focused' : ''">
+         <input ng-disabled="noConnection" type="checkbox"  ng-model="standardniSlovar">
+         <div class="topcoat-checkbox"></div>
+         Prenesi standardni slovar
+        </label>
+     
+   		<p>
+   		<label ng-show="!standardniSlovar" for="email" > E-pošta:
+   			<input  ng-disabled="noConnection" type="email" name="email" ng-model="user.email" class="topcoat-text-input" placeholder="jana.novak@email.com"required blur>
+      </label>  
+   		</p>
+   		<p>
+   		<label ng-show="!standardniSlovar"  for="passwd" > Geslo: 
+   			<input  ng-disabled="noConnection" type="text" name="passwd" ng-model="user.password" class="topcoat-text-input" value="" required blur>
+      </label>  
+   		</p>	
+   		
+   		  <a class="topcoat-button--cta fullWidth"  ng-class="(loginForm.$invalid && !standardniSlovar)? 'is-disabled' : ''"  ng-click="prenos(standardniSlovar, user)">Prenesi  nov slovar </a>
+   	</form>
+   </div>
+
+   <div class="centerDiv" ng-switch-when="downloading">
+    <p>{{notification}}</p>
+  	<div id="warningGradientOuterBarG">
+  		<div id="warningGradientFrontBarG" class="warningGradientAnimationG">
+  			<div class="warningGradientBarLineG"></div>
+  			<div class="warningGradientBarLineG"></div>
+  			<div class="warningGradientBarLineG"></div>
+  			<div class="warningGradientBarLineG"></div>
+  			<div class="warningGradientBarLineG"></div>
+  			<div class="warningGradientBarLineG"></div>
+  		</div>
+	 </div> 
+   <a class="topcoat-button fullWidth"  ng-click="prekliciPrenos()">Prekliči prenos slovarja </a>
+  </div>
+
+  <div class="centerDiv" ng-switch-when="downloadFinished">
+    <p>Nov slovar se je prenesel na komunikator, sedaj lahko zamenjate obstoječi slovar z novim slovarjom.</p>
+    <a class="topcoat-button--cta fullWidth"  ng-click="potrdiMenjavo()">Potrdi zamenjavo slovarjev</a>
+    <a class="topcoat-button fullWidth "  ng-click="prekliciMenjavo()">Prekliči zamenjavo</a>
+  </div>
+</div>
