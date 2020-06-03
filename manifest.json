@@ -1,8 +1,0 @@
-{
-    "name": "Let me speak",
-    "theme_color": "#333434",
-    "background_color": "#3a3f42",
-    "display": "browser",
-    "scope": "/",
-    "start_url": "/"
-  }
