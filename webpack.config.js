@@ -18,6 +18,14 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        use: [
+          {
+            loader: "file-loader" // Or `url-loader` or your other loader
+          }
+        ]
+      },
       // NOTE: html-loader doesn't play well with HtmlWebpackPlugin
       // {
       //   test: /\.html$/,
@@ -73,17 +81,28 @@ module.exports = {
         { from: './scripts/', to: 'scripts/' },
         { from: './views/', to: 'views/' },
         { from: './index.html', to: 'index.html' },
-        { from: './bower_components/', to: 'bower_components/' }
+        { from: './bower_components/audio5/audio5.min.js', to: 'bower_components/audio5/audio5.min.js' },
+        { from: './bower_components/angular/angular.min.js', to: 'bower_components/angular/angular.min.js' },
+        { from: './bower_components/angular/angular-mobile.min.js', to: 'bower_components/angular/angular-mobile.min.js' },
+        { from: './bower_components/angular-mobile-nav/mobile-nav.min.js', to: 'bower_components/angular-mobile-nav/mobile-nav.min.js' }
       ]
     }),
     new ImageminPlugin({
+      maxConcurrency: 3,
       test: /\.(jpe?g|png|gif|svg)$/i,
+      pngquant: ({ quality: 40 - 50 }),
       plugins: [
-        imageminMozjpeg({
-          quality: 60,
-          progressive: true
-        })
-      ]
+        ["optipng", { optimizationLevel: 5 }]
+        // imageminMozjpeg({
+        //   quality: 60,
+        //   progressive: true
+        // })
+      ],
+      externalImages: {
+        context: 'slovar/slike', // Important! This tells the plugin where to "base" the paths at
+        sources: glob.sync('slovar/slike/*.png'),
+        destination: 'dist/slovar/slike'
+      }
     }),
     new WebpackPwaManifest({
       name: 'Let me speak',
