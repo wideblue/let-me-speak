@@ -35,7 +35,7 @@
   "short_name": "I speak",
   "orientation": "portrait",
   "display": "standalone",
-  "start_url": "/let-me-speak/index.html",
+  "start_url": "/let-me-speak/",
   "description": "Personal communicator app ",
   "background_color": "#3a3f42",
   "theme_color": "#58595c",
