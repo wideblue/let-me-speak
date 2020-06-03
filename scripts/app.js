@@ -24,6 +24,10 @@ var mojKomunikatorApp = angular.module('mojKomunikatorApp', ['Audio5', 'ajoslin.
         templateUrl: 'views/tipkovnica.html',
         controller: 'TipkovnicaCtrl'
       })
+      .when('/prenos', {
+        templateUrl: 'views/prenos.html',
+        controller: 'PrenosCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
