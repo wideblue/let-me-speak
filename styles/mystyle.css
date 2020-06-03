@@ -45,10 +45,14 @@ border-top: solid 1px #dadada;
 }*/
 
 html, body {
+  color: #fff;
   -webkit-user-select: none;
   text-rendering: auto; /*pri androidu se ne prikažejo ikone, če ta lastnost iz topcoata ni zamenjana iz text-rendering: optimizeLegibility*/
 }
 
+a {
+  color: #6fb5f1;
+}
 .topcoat-navigation-bar {
   padding-left: 1%;
   padding-right: 1%;
@@ -574,7 +578,7 @@ input.ng-valid.ng-dirty {
 
 /* Navigational tab */
 .tab-item {
-  width: 25%;
+  width: 20%;
   float: left;
   height: 100%;
   text-align: center;
