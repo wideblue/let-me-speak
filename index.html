@@ -2,68 +2,85 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
 
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
 
-        <!-- build:css({.tmp,app}) styles/main.css -->
-         <link rel="stylesheet" href="styles/fontcustom.css"/>
-         <link rel="stylesheet" href="bower_components/angular-mobile-nav/mobile-nav.css"/>
-        <link rel="stylesheet" href="styles/topcoat-mobile-dark.css"/>
-       
-        <link rel="stylesheet" href="styles/mystyle.css"/>
-        <!-- endbuild -->
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+  <!-- build:css({.tmp,app}) styles/main.css -->
+  <link rel="stylesheet" href="styles/fontcustom.css" />
+  <link rel="stylesheet" href="bower_components/angular-mobile-nav/mobile-nav.css" />
+  <link rel="stylesheet" href="styles/topcoat-mobile-dark.css" />
+
+  <link rel="stylesheet" href="styles/mystyle.css" />
+  <!-- endbuild -->
 </head>
-  <body ng-app="mojKomunikatorApp">
-    <!--[if lt IE 7]>
+
+<body ng-app="mojKomunikatorApp">
+  <!--[if lt IE 7]>
       <p class="chromeframe">Uporabljate star brskalnik, ki ga ta aplikacija ne podpira. <a href="http://browsehappy.com/">Posodobite ga še danes </a> ali <a href="http://www.google.com/chromeframe/?redirect=true">naložite Google Chrome Frame</a>in imejte boljšo uporabniško izkušnjo te strani.</p>
     <![endif]-->
 
-    <!--[if lt IE 9]>
+  <!--[if lt IE 9]>
       <script src="bower_components/es5-shim/es5-shim.js"></script>
       <script src="bower_components/json3/lib/json3.min.js"></script>
     <![endif]-->
 
-    <!-- Add your site or application content here -->
-    <ng-view class="container" ></ng-view>
-        <script src="bower_components/audio5/audio5.js"></script>
-        <script src="bower_components/angular/angular.js"></script>
-        <script src="bower_components/angular/angular-mobile.js"></script>
-        <script src="bower_components/angular-mobile-nav/mobile-nav.min.js"></script>
-        <!-- <script src="bower_components/fastclick/lib/fastclick.js"></script> -->
-        <!-- <script src="cordova.js"></script> -->
-        <script src="slovar/slovar.json"></script> 
+  <!-- Add your site or application content here -->
+  <ng-view class="container"></ng-view>
+  <script src="bower_components/audio5/audio5.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular/angular-mobile.js"></script>
+  <script src="bower_components/angular-mobile-nav/mobile-nav.min.js"></script>
+  <!-- <script src="bower_components/fastclick/lib/fastclick.js"></script> -->
+  <!-- <script src="cordova.js"></script> -->
+  <script src="slovar/slovar.json"></script>
 
-    <!-- build:js({.tmp,app}) scripts/scripts.js -->
-    <script src="scripts/app.js"></script>
-    <script src="scripts/controllers/main.js"></script>
-    <!-- endbuild -->
-
-        <!-- build:js scripts/modules.js -->
-        <!-- <script src="bower_components/angular-cookies/angular-cookies.js"></script> -->
-        <script src="scripts/controllers/slovar.js"></script>
-        <script src="scripts/controllers/priljubljene.js"></script>
-        <script src="scripts/controllers/osnovne.js"></script>
-        <!-- <script src="scripts/controllers/prenos.js"></script> -->
-        <script src="scripts/directives/ngFocus.js"></script>
-        <script src="scripts/services/audioManager.js"></script>
-        <script src="scripts/services/cordovaReady.js"></script>
-        <script src="scripts/services/ngAudio5.js"></script>
-        <script src="scripts/services/persistantStorage.js"></script>
-        <script src="scripts/controllers/tipkovnica.js"></script>
-        <script src="scripts/services/mobileNav.js"></script>
-        <script src="scripts/services/notification.js"></script>
-        <!-- endbuild -->
+  
 </body>
- <script type="application/javascript">
-    
-        // new FastClick(document.body);
-    
-  </script>
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+  <script src="scripts/app.js"></script>
+  <script src="scripts/controllers/main.js"></script>
+  <!-- endbuild -->
+
+  <!-- build:js scripts/modules.js -->
+  <!-- <script src="bower_components/angular-cookies/angular-cookies.js"></script> -->
+  <script src="scripts/controllers/slovar.js"></script>
+  <script src="scripts/controllers/priljubljene.js"></script>
+  <script src="scripts/controllers/osnovne.js"></script>
+  <!-- <script src="scripts/controllers/prenos.js"></script> -->
+  <script src="scripts/directives/ngFocus.js"></script>
+  <script src="scripts/services/audioManager.js"></script>
+  <script src="scripts/services/ngAudio5.js"></script>
+  <script src="scripts/services/persistantStorage.js"></script>
+  <script src="scripts/controllers/tipkovnica.js"></script>
+  <script src="scripts/services/mobileNav.js"></script>
+  <script src="scripts/services/notification.js"></script>
+  <!-- endbuild -->
+<script type="application/javascript">
+
+  // new FastClick(document.body);
+  /**
+* Register service worker.
+*/
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js').then(registration => {
+        console.log('SW registered: ', registration);
+      }).catch(registrationError => {
+        console.log('SW registration failed: ', registrationError);
+      });
+    });
+  }
+
+</script>
+
 </html>

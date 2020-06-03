@@ -1,0 +1,40 @@
+{
+  "name": "let-me-speak",
+  "version": "1.0.0",
+  "description": "--- #### _Personal communicator app_",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write '**/*.{js,jsx}'",
+    "dev": "webpack --mode development",
+    "start": "webpack-dev-server --open --mode development",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wideblue/let-me-speak.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wideblue/let-me-speak/issues"
+  },
+  "homepage": "https://github.com/wideblue/let-me-speak#README.md",
+  "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^6.0.1",
+    "css-loader": "^3.5.3",
+    "glob": "^7.1.6",
+    "html-loader": "^1.1.0",
+    "html-webpack-plugin": "^4.3.0",
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-webpack-plugin": "^2.4.2",
+    "mini-css-extract-plugin": "^0.9.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-pwa-manifest": "^4.2.0",
+    "workbox-webpack-plugin": "^5.1.3"
+  },
+  "dependencies": {}
+}
