@@ -110,7 +110,6 @@ module.exports = {
       description: 'Personal communicator app ',
       background_color: '#3a3f42',
       theme_color: '#58595c',
-      'theme-color': '#01579b',
       start_url: '/let-me-speak/',
       icons: [
         {
