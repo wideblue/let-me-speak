@@ -878,3 +878,21 @@ margin-left:-74px;
   font-size: 1.3333333333333333em;
 }
 
+@media screen and (max-width: 700px) {
+
+  .box {
+    float: left;
+    position: relative;
+    width: 33%;
+    padding-bottom: 36%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font: 14px "Source Sans", helvetica, arial, sans-serif;
+    font-weight: 200;
+    text-rendering: optimizeLegibility;
+
+
+  }
+}
