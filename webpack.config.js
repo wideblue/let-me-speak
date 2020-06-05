@@ -52,8 +52,8 @@ module.exports = {
     // I need this so that PWA manifest with start_url gets injected
     new HtmlWebpackPlugin({
       hash: false,
-      title: 'Let me speak',
-      myPageHeader: 'Let me speak',
+      title: 'MojKomunikator',
+      myPageHeader: 'MojKomunikator',
       template: 'index.html',
       minify: true,
       chunks: ['app'],
