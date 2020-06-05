@@ -105,8 +105,8 @@ module.exports = {
       }
     }),
     new WebpackPwaManifest({
-      name: 'Let me speak',
-      short_name: 'I speak',
+      name: 'MojKomunikator',
+      short_name: 'MojKomunikator',
       description: 'Personal communicator app ',
       background_color: '#3a3f42',
       theme_color: '#58595c',
@@ -115,6 +115,11 @@ module.exports = {
         {
           src: path.resolve('styles/icon-173-tile.png'),
           sizes: [96, 128, 192, 256, 384, 512] // multiple sizes
+        },
+        {
+          src: path.resolve('styles/app-icon-152-152.png'),
+          sizes: [120, 152, 167, 180], // multiple sizes
+          ios:true
         }
       ]
     }),
